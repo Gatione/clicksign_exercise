@@ -1,0 +1,9 @@
+CREATE TABLE signers (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+	auths VARCHAR(20) NOT NULL,
+    birthday VARCHAR(10) NOT NULL,
+    documentation VARCHAR(14) NOT NULL UNIQUE,
+    email VARCHAR(200) NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL
+);

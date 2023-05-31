@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    text-decoration: none;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+#fileInput {
+    display: none;
+  }
+  
+  .picture {
+    width: 400px;
+    min-height: 250px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    border: 2px dashed currentcolor;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    outline: none;
+  }
+  
+  .picture:hover {
+    color: #777;
+    background: #ccc;
+  }
+  
+  .picture:active {
+    border-color: turquoise;
+    color: turquoise;
+    background: #eee;
+  }
+  
+  .picture:focus {
+    color: #777;
+    background: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .filePreview {
+    max-width: 100%;
+  }
+  
+  #uploadFIleForm {
+      margin-bottom: 20px;
+  }
+  
+  
+  /*Inícia Galeria*/
+  .my-galeria, .document-galeria { 
+      width:100%; 
+      float:left; 
+      position:relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+  }
+  .my-galeria .foto .mascara, .document-galeria .foto .mascara { 
+      
+    background: rgba(0,0,0,0);
+    transition:0.5s;  
+      position:absolute; 
+      width:100%; 
+      height:100%; 
+      left:0; bottom:0; 
+  }
+  .my-galeria .foto .image-link, .document-galeria .foto .image-link { 
+      
+      display: block;
+      position: absolute;
+      left:35%;
+      bottom:25px;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.8em;
+      background: transparent;
+      color: #ffffff;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+      opacity:0;
+      margin-left: 20px;
+      margin-bottom: 20px;  
+  }
+  .my-galeria .foto, .document-galeria .foto { 
+      width:100%; 
+      float:left; 
+      display:block; 
+      margin-bottom:5%;  
+      border:1px #f0f0f0 solid; 
+      position:relative; 
+      overflow:hidden; 
+      border-radius:6px; 
+  }
+  .foto:hover .image-link { bottom:20%; transition: all .3s ease-in-out; opacity:1; } 
+  .foto:hover .mascara    { background:rgba(0, 0, 0, 0.70); } 
+  /*Termina Galeria*/
+  /*Aqui Começa o Responsivo*/
+  /*768 dividido por 16 = 48em*/
+  @media (min-width:48em){
+  .my-galeria .foto { width:48%; margin-right:4%; margin-bottom:4%;}
+  .my-galeria .foto:nth-of-type(2n+0) { margin-right:0; }
+  } 
+  /*1280PX BREAKPOINT*/
+  /*1280 dividido por 16 = 80em*/
+  @media (min-width:80em){
+  .my-galeria .foto:nth-of-type(2n+0), 
+  .my-galeria .foto { width:23.5%; margin-right:2%; margin-bottom:2%; }
+  .my-galeria .foto:nth-of-type(4n+0) { margin-right:0; }
+   
+  }
+  
+  .listFigure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 200px;
+  
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  img {
+      height: 100%;
+  }
+
+  .iframeSpace {
+    display: flex;
+    position: relative;
+  }
+  .iframeSpace div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  #formSignedDocuments{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+  }
+
+ #content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ }
+
+ .popupModal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+ }
+
+ .popup {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  gap: 10px;
+  position: relative;
+  overflow: auto;
+ }
+
+ .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+ }
+
+.form-label {
+  margin-bottom: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin-bottom: 0;
+}
